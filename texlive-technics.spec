@@ -1,12 +1,13 @@
-# revision 16238
+# revision 29349
 # category Package
 # catalog-ctan /macros/latex/contrib/technics
-# catalog-date 2007-01-16 00:15:12 +0100
+# catalog-date 2012-08-31 01:04:09 +0200
 # catalog-license lppl
-# catalog-version undef
+# catalog-version 1.0
 Name:		texlive-technics
-Version:	20070116
-Release:	2
+Epoch:		1
+Version:	1.0
+Release:	1
 Summary:	A package to format technical documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/technics
@@ -19,7 +20,10 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 
 %description
-TeXLive technics package.
+The package provides a very simple LaTeX document template, in
+the hope that this use of LaTeX will become attractive to
+typical word processor users. (Presentation is as if it were a
+class; users are expected to start from a template document.).
 
 %post
     %{_sbindir}/texlive.post
@@ -49,16 +53,3 @@ TeXLive technics package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20070116-2
-+ Revision: 756550
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20070116-1
-+ Revision: 719663
-- texlive-technics
-- texlive-technics
-- texlive-technics
-
