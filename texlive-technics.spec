@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-technics
 Version:	20070116
-Release:	2
+Release:	3
 Summary:	A package to format technical documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/technics
