@@ -7,7 +7,7 @@
 Name:		texlive-technics
 Epoch:		1
 Version:	1.0
-Release:	7
+Release:	8
 Summary:	A package to format technical documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/technics
