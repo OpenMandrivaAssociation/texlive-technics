@@ -1,19 +1,13 @@
-# revision 29349
-# category Package
-# catalog-ctan /macros/latex/contrib/technics
-# catalog-date 2012-08-31 01:04:09 +0200
-# catalog-license lppl
-# catalog-version 1.0
 Name:		texlive-technics
 Epoch:		1
-Version:	1.0
-Release:	10
+Version:	29349
+Release:	1
 Summary:	A package to format technical documents
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/technics
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ typical word processor users. (Presentation is as if it were a
 class; users are expected to start from a template document.).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -46,7 +40,7 @@ class; users are expected to start from a template document.).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
