@@ -1,49 +1,23 @@
-Name:		texlive-technics
+%global tl_name technics
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	29349
-Release:	2
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	A package to format technical documents
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/technics
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.doc.r%{version}.tar.xz
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/technics.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a very simple LaTeX document template, in
-the hope that this use of LaTeX will become attractive to
-typical word processor users. (Presentation is as if it were a
-class; users are expected to start from a template document.).
+The package provides a very simple LaTeX document template, in the hope
+that this use of LaTeX will become attractive to typical word processor
+users. (Presentation is as if it were a class; users are expected to
+start from a template document.)
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/technics/technics.sty
-%doc %{_texmfdistdir}/doc/latex/technics/png2eps.sh
-%doc %{_texmfdistdir}/doc/latex/technics/rf-logo.zip
-%doc %{_texmfdistdir}/doc/latex/technics/technics.pdf
-%doc %{_texmfdistdir}/doc/latex/technics/technics.tex
-%doc %{_texmfdistdir}/doc/latex/technics/view-dvi.sh
-%doc %{_texmfdistdir}/doc/latex/technics/vmlinux.eps
-%doc %{_texmfdistdir}/doc/latex/technics/vmlinux.png
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
